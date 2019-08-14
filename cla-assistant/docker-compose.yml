@@ -11,16 +11,12 @@ services:
       - "5000:5000"
     links:
       - mongodb
-    depends_on:
-      - mongoClientTemp
   mongodb:
     image: mongo:latest
     container_name: mongodb
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: cla_assistant
-      MONGO_INITDB_ROOT_PASSWORD: cla_assistant
-      MONGO_INITDB_DATABASE: cla_assistant
-      MONGODB_DATABASE: cla_assistant
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
     ports:
       - 27018:27017
